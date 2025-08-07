@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Tools - Finovix Complete Finance Solutions</title>
+    <meta name="description" content="Interactive finance tools: Loan/EMI Calculator and Savings Goal Tracker by Finovix">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/tools.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Finovix</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="ai-tools.html" class="nav-link">AI Tools</a></li>
+                <li class="nav-item"><a href="tools.html" class="nav-link active">Tools</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Finance Tools</h1>
+                <p>Interactive calculators and trackers to help you plan and achieve your financial goals.</p>
+            </div>
+        </div>
+        <div class="hero-bg-animation"></div>
+    </section>
+
+    <!-- Loan/EMI Calculator -->
+    <section class="tools-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Loan/EMI Calculator</h2>
+                <p>Calculate your monthly EMI, total interest, and total payment for any loan amount.</p>
+            </div>
+            <div class="emi-calculator-card">
+                <form id="emiForm">
+                    <div class="form-group">
+                        <label for="loanAmount">Loan Amount ($)</label>
+                        <input type="range" id="loanAmount" min="1000" max="100000" step="100" value="25000">
+                        <span class="slider-value" id="loanAmountValue">$25,000</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="interestRate">Interest Rate (%)</label>
+                        <input type="range" id="interestRate" min="1" max="20" step="0.1" value="7.5">
+                        <span class="slider-value" id="interestRateValue">7.5%</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="loanTenure">Tenure (years)</label>
+                        <input type="range" id="loanTenure" min="1" max="30" step="1" value="5">
+                        <span class="slider-value" id="loanTenureValue">5 years</span>
+                    </div>
+                </form>
+                <div class="emi-results">
+                    <div class="result-item">
+                        <span class="result-label">Monthly EMI</span>
+                        <span class="result-value" id="emiResult">$0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Total Interest</span>
+                        <span class="result-value" id="interestResult">$0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Total Payment</span>
+                        <span class="result-value" id="totalResult">$0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Savings Goal Tracker -->
+    <section class="tools-section savings-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Savings Goal Tracker</h2>
+                <p>Track your progress towards your savings goals with milestones and visual progress bars.</p>
+            </div>
+            <div class="savings-goals-grid">
+                <div class="savings-goal-card">
+                    <div class="goal-header">
+                        <i class="fas fa-plane-departure"></i>
+                        <span>Vacation Fund</span>
+                    </div>
+                    <div class="goal-progress-bar">
+                        <div class="goal-progress-fill" style="width: 60%"></div>
+                    </div>
+                    <div class="goal-stats">
+                        <span>$3,000 / $5,000</span>
+                        <span>60%</span>
+                    </div>
+                    <div class="goal-milestones">
+                        <span class="milestone reached">$1,000</span>
+                        <span class="milestone reached">$2,000</span>
+                        <span class="milestone">$5,000</span>
+                    </div>
+                </div>
+                <div class="savings-goal-card">
+                    <div class="goal-header">
+                        <i class="fas fa-car"></i>
+                        <span>New Car</span>
+                    </div>
+                    <div class="goal-progress-bar">
+                        <div class="goal-progress-fill" style="width: 35%"></div>
+                    </div>
+                    <div class="goal-stats">
+                        <span>$7,000 / $20,000</span>
+                        <span>35%</span>
+                    </div>
+                    <div class="goal-milestones">
+                        <span class="milestone reached">$5,000</span>
+                        <span class="milestone">$10,000</span>
+                        <span class="milestone">$20,000</span>
+                    </div>
+                </div>
+                <div class="savings-goal-card">
+                    <div class="goal-header">
+                        <i class="fas fa-home"></i>
+                        <span>Home Down Payment</span>
+                    </div>
+                    <div class="goal-progress-bar">
+                        <div class="goal-progress-fill" style="width: 80%"></div>
+                    </div>
+                    <div class="goal-stats">
+                        <span>$40,000 / $50,000</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="goal-milestones">
+                        <span class="milestone reached">$10,000</span>
+                        <span class="milestone reached">$25,000</span>
+                        <span class="milestone">$50,000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Finovix</span>
+                    </div>
+                    <p>Empowering your financial future with cutting-edge technology and personalized solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html">Personal Finance</a></li>
+                        <li><a href="services.html">Investment Planning</a></li>
+                        <li><a href="services.html">Loan Advisory</a></li>
+                        <li><a href="services.html">Tax Calculators</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>AI Tools</h3>
+                    <ul>
+                        <li><a href="ai-tools.html">AI Chat Assistant</a></li>
+                        <li><a href="ai-tools.html">Spending Analyzer</a></li>
+                        <li><a href="ai-tools.html">Investment Predictor</a></li>
+                        <li><a href="ai-tools.html">Budget Planner</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Finovix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-toggle" id="chatToggle">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chat-container" id="chatContainer">
+            <div class="chat-header">
+                <h4>AI Assistant</h4>
+                <button class="chat-close" id="chatClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        Hi! I can help you use our finance tools or answer questions about your goals. What would you like to do?
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Ask about our tools...">
+                <button id="chatSend">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/tools.js"></script>
+</body>
+</html> 

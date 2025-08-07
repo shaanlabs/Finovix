@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Finovix Complete Finance Solutions</title>
+    <meta name="description" content="Latest financial insights, tips, and expert advice from Finovix">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/blog.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Finovix</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="ai-tools.html" class="nav-link">AI Tools</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blog.html" class="nav-link active">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Financial Insights & Tips</h1>
+                <p>Stay informed with the latest financial trends, expert advice, and actionable insights to help you achieve your financial goals.</p>
+            </div>
+        </div>
+        <div class="hero-bg-animation"></div>
+    </section>
+
+    <!-- Featured Article -->
+    <section class="featured-section">
+        <div class="container">
+            <div class="featured-article">
+                <div class="article-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="article-badge">Featured</div>
+                </div>
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span class="category">Investment</span>
+                        <span class="date">March 15, 2024</span>
+                        <span class="read-time">8 min read</span>
+                    </div>
+                    <h2>The Future of AI in Personal Finance: What You Need to Know</h2>
+                    <p>Discover how artificial intelligence is revolutionizing personal finance management and what it means for your financial future. From automated budgeting to intelligent investment recommendations, AI is transforming how we approach money management.</p>
+                    <div class="article-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <span class="author-name">Sarah Johnson</span>
+                            <span class="author-title">CEO & Co-Founder</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary">Read Full Article</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest Articles</h2>
+                <p>Expert insights and practical advice for your financial journey</p>
+            </div>
+            
+            <div class="blog-filters">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="investment">Investment</button>
+                <button class="filter-btn" data-category="budgeting">Budgeting</button>
+                <button class="filter-btn" data-category="ai">AI & Technology</button>
+                <button class="filter-btn" data-category="tips">Financial Tips</button>
+            </div>
+            
+            <div class="blog-grid">
+                <article class="blog-card" data-category="investment">
+                    <div class="card-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div class="card-badge">Investment</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="date">March 12, 2024</span>
+                            <span class="read-time">5 min read</span>
+                        </div>
+                        <h3>5 Investment Strategies for Beginners in 2024</h3>
+                        <p>Learn the fundamentals of investing and discover five proven strategies that can help beginners build wealth in today's market.</p>
+                        <div class="card-author">
+                            <span class="author-name">Michael Chen</span>
+                        </div>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="budgeting">
+                    <div class="card-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <div class="card-badge">Budgeting</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="date">March 10, 2024</span>
+                            <span class="read-time">6 min read</span>
+                        </div>
+                        <h3>How to Create a Budget That Actually Works</h3>
+                        <p>Master the art of budgeting with our comprehensive guide. Learn practical techniques to track expenses and achieve your financial goals.</p>
+                        <div class="card-author">
+                            <span class="author-name">Emily Rodriguez</span>
+                        </div>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="ai">
+                    <div class="card-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="card-badge">AI & Technology</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="date">March 8, 2024</span>
+                            <span class="read-time">7 min read</span>
+                        </div>
+                        <h3>AI-Powered Financial Planning: The Complete Guide</h3>
+                        <p>Explore how artificial intelligence is transforming financial planning and how you can leverage these tools for better financial decisions.</p>
+                        <div class="card-author">
+                            <span class="author-name">David Kim</span>
+                        </div>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="tips">
+                    <div class="card-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="card-badge">Financial Tips</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="date">March 6, 2024</span>
+                            <span class="read-time">4 min read</span>
+                        </div>
+                        <h3>10 Smart Money Habits That Will Transform Your Finances</h3>
+                        <p>Discover simple yet powerful habits that can dramatically improve your financial health and help you build lasting wealth.</p>
+                        <div class="card-author">
+                            <span class="author-name">Lisa Thompson</span>
+                        </div>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="investment">
+                    <div class="card-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="card-badge">Investment</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="date">March 4, 2024</span>
+                            <span class="read-time">9 min read</span>
+                        </div>
+                        <h3>Risk Management in Investment: A Comprehensive Approach</h3>
+                        <p>Learn essential risk management strategies to protect your investments and maximize returns in volatile markets.</p>
+                        <div class="card-author">
+                            <span class="author-name">Alex Patel</span>
+                        </div>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="budgeting">
+                    <div class="card-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="card-badge">Budgeting</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="date">March 2, 2024</span>
+                            <span class="read-time">5 min read</span>
+                        </div>
+                        <h3>50/30/20 Rule: The Ultimate Budgeting Method</h3>
+                        <p>Master the 50/30/20 budgeting rule and learn how to allocate your income effectively for needs, wants, and savings.</p>
+                        <div class="card-author">
+                            <span class="author-name">Sarah Johnson</span>
+                        </div>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="load-more">
+                <button class="btn btn-secondary">
+                    <i class="fas fa-plus"></i>
+                    Load More Articles
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated with Financial Insights</h2>
+                <p>Get the latest financial tips, market updates, and expert advice delivered directly to your inbox.</p>
+                <form class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Subscribe
+                        </button>
+                    </div>
+                </form>
+                <p class="newsletter-note">Join 10,000+ subscribers. Unsubscribe anytime.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Finovix</span>
+                    </div>
+                    <p>Empowering your financial future with cutting-edge technology and personalized solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html">Personal Finance</a></li>
+                        <li><a href="services.html">Investment Planning</a></li>
+                        <li><a href="services.html">Loan Advisory</a></li>
+                        <li><a href="services.html">Tax Calculators</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>AI Tools</h3>
+                    <ul>
+                        <li><a href="ai-tools.html">AI Chat Assistant</a></li>
+                        <li><a href="ai-tools.html">Spending Analyzer</a></li>
+                        <li><a href="ai-tools.html">Investment Predictor</a></li>
+                        <li><a href="ai-tools.html">Budget Planner</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Finovix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-toggle" id="chatToggle">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chat-container" id="chatContainer">
+            <div class="chat-header">
+                <h4>AI Assistant</h4>
+                <button class="chat-close" id="chatClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        Hi! I can help you find relevant financial articles or answer questions about our blog content. What would you like to know?
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Ask about our articles...">
+                <button id="chatSend">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html> 
