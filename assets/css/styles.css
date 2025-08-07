@@ -97,11 +97,24 @@ img:hover {
 
 /* Hero Section */
 .hero {
-  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                    url('../images/hero-bg.jpg');
-  background-size: cover;
-  background-position: center;
+  position: relative;
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+.hero-content {
+  animation: slideUp 1s ease forwards;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, var(--accent), white);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 /* Glassmorphism Cards */
@@ -111,6 +124,7 @@ img:hover {
   backdrop-filter: blur(10px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease forwards;
 }
 
 #services .card:hover {
@@ -123,6 +137,22 @@ img:hover {
   font-weight: bold;
   color: #222;
   margin-top: 10px;
+}
+
+/* Services Section */
+.services-grid {
+  padding: 4rem 0;
+}
+
+.service-card {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideUp 0.5s ease forwards;
+  animation-play-state: paused;
+}
+
+.service-card.visible {
+  animation-play-state: running;
 }
 
 /* Gallery Styling */
@@ -211,6 +241,7 @@ footer a:hover {
     transform: translateY(0);
   }
 }
+
 /* Parallax Effect for Hero Section */
 header {
   position: relative;
@@ -314,26 +345,104 @@ html {
   transform: scale(1);
 }
 
-/* Modern Components */
+/* Custom Animations */
+@keyframes slideUp {
+  from { transform: translateY(100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Core Layout & Grid */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Component Styles */
+.card {
+  background: var(--card-bg);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
 .btn-primary {
-    @apply px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 
-           text-white rounded-full font-semibold 
-           transform transition-all duration-200 
-           hover:scale-105 hover:shadow-lg;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
 }
 
-.btn-secondary {
-    @apply px-6 py-3 bg-white text-gray-800 
-           rounded-full font-semibold border-2 
-           transform transition-all duration-200 
-           hover:scale-105 hover:shadow-lg;
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: 0.5s;
 }
 
-/* Card Animations */
-.service-card {
-    @apply bg-white dark:bg-gray-800 rounded-xl p-6 
-           shadow-lg transform transition-all duration-200 
-           hover:-translate-y-2 hover:shadow-xl;
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Utility Classes */
+.text-gradient {
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.shadow-custom {
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
 }
 
 /* Dark Mode Transitions */
@@ -383,4 +492,39 @@ html {
   border-radius: 1rem;
   padding: 1.5rem;
   margin: 1rem 0;
+}
+
+/* Animation Classes */
+.animation-container {
+    opacity: 0;
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.service-card {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+/* Animation Transitions */
+.page-transition {
+    transition: opacity 0.3s ease;
+}
+
+.nav-animation {
+    transition: transform 0.3s ease;
+}
+
+/* Hover Animations */
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }

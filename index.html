@@ -15,12 +15,16 @@
     
     <!-- Stylesheets -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
     <!-- Navbar -->
-    <nav class="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-lg">
+    <nav class="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-lg nav-animation">
         <div class="container mx-auto flex justify-between items-center py-4">
             <div class="logo text-2xl font-bold">
                 <a href="#home" class="text-gray-800 dark:text-white">Finovix</a>
@@ -45,15 +49,15 @@
         <div id="pageContent">
             <!-- Hero Section -->
             <header class="relative h-screen flex items-center justify-center">
-                <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-90"></div>
+                <div class="hero-bg-animation absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-90"></div>
                 <div class="container mx-auto text-center text-white relative z-10">
-                    <h1 class="text-5xl font-bold mb-6" data-aos="fade-down">
+                    <h1 class="text-5xl font-bold mb-6 hero-title-animation">
                         Start your financial journey with AI
                     </h1>
-                    <p class="text-xl mb-8" data-aos="fade-up">
+                    <p class="text-xl mb-8 hero-text-animation">
                         Smart money management powered by artificial intelligence
                     </p>
-                    <div class="flex justify-center gap-4">
+                    <div class="flex justify-center gap-4 hero-buttons-animation">
                         <a href="#started" class="btn-primary">Get Started</a>
                         <a href="#demo" class="btn-secondary">Watch Demo</a>
                     </div>
@@ -64,52 +68,54 @@
             <main>
                 <!-- Services Section -->
                 <section id="services" class="py-5">
-                    <div class="container"></div>
-                        <h2 class="text-center" data-aos="fade-right">Our Services</h2>
-                        <p class="text-center mb-4" data-aos="fade-left">Discover our range of financial services designed to help you succeed.</p>
-                        <div class="row g-4">
-                            <div class="col-md-4" data-aos="zoom-in">
-                                <div class="card">
-                                    <img src="3.png" class="card-img-top" alt="Trading">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Trading</h5>
-                                        <p class="card-text">Cutting-edge trading strategies to maximize your growth potential.</p>
+                    <div class="container">
+                        <div class="services-grid animation-container">
+                            <h2 class="text-center" data-aos="fade-right">Our Services</h2>
+                            <p class="text-center mb-4" data-aos="fade-left">Discover our range of financial services designed to help you succeed.</p>
+                            <div class="row g-4">
+                                <div class="col-md-4" data-aos="zoom-in">
+                                    <div class="card">
+                                        <img src="3.png" class="card-img-top" alt="Trading">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Trading</h5>
+                                            <p class="card-text">Cutting-edge trading strategies to maximize your growth potential.</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4" data-aos="zoom-in">
-                                <div class="card">
-                                    <img src="4.png" class="card-img-top" alt="Investment">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Investment</h5>
-                                        <p class="card-text">Tailored investment plans for long-term financial security.</p>
+                                <div class="col-md-4" data-aos="zoom-in">
+                                    <div class="card">
+                                        <img src="4.png" class="card-img-top" alt="Investment">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Investment</h5>
+                                            <p class="card-text">Tailored investment plans for long-term financial security.</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4" data-aos="zoom-in">
-                                <div class="card">
-                                    <img src="5.png" class="card-img-top" alt="Cryptocurrency">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Cryptocurrency</h5>
-                                        <p class="card-text">Expert insights into the rapidly growing world of cryptocurrency.</p>
+                                <div class="col-md-4" data-aos="zoom-in">
+                                    <div class="card">
+                                        <img src="5.png" class="card-img-top" alt="Cryptocurrency">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Cryptocurrency</h5>
+                                            <p class="card-text">Expert insights into the rapidly growing world of cryptocurrency.</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4" data-aos="zoom-in">
-                                <div class="card">
-                                    <img src="6.png" class="card-img-top" alt="Real Estate">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Real Estate</h5>
-                                        <p class="card-text">Exclusive access to profitable real estate investment opportunities.</p>
+                                <div class="col-md-4" data-aos="zoom-in">
+                                    <div class="card">
+                                        <img src="6.png" class="card-img-top" alt="Real Estate">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Real Estate</h5>
+                                            <p class="card-text">Exclusive access to profitable real estate investment opportunities.</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4" data-aos="zoom-in">
-                                <div class="card">
-                                    <img src="7.png" class="card-img-top" alt="Consulting">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Financial Consulting</h5>
-                                        <p class="card-text">Customized solutions for your unique financial challenges.</p>
+                                <div class="col-md-4" data-aos="zoom-in">
+                                    <div class="card">
+                                        <img src="7.png" class="card-img-top" alt="Consulting">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Financial Consulting</h5>
+                                            <p class="card-text">Customized solutions for your unique financial challenges.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
