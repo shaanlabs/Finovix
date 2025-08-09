@@ -1,5 +1,36 @@
 // Main JavaScript for Nextomic Finance Solutions
 
+// Theme Toggle Functionality
+function initThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (!themeToggle) return;
+    
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    
+    // Set initial theme
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    updateThemeIcon(currentTheme);
+    
+    themeToggle.addEventListener('click', function() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+        
+        // Trigger theme change event for charts and other components
+        window.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme: newTheme } }));
+    });
+}
+
+function updateThemeIcon(theme) {
+    const icon = document.querySelector('#theme-toggle i');
+    if (icon) {
+        icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    }
+}
+
 // === Real-Time Currency Exchange Widget ===
 const EXCHANGE_API = 'https://open.er-api.com/v6/latest/USD';
 const CURRENCIES = ['USD', 'EUR', 'GBP', 'INR'];
@@ -712,6 +743,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initButtonLoading();
     initCardHoverEffects();
     initParallaxEffect();
+    initThemeToggle(); // Initialize theme toggle
     
     // Initialize AI Chat
     const aiChat = new AIChat();
