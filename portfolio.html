@@ -8,6 +8,50 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/portfolio.css">
+    <style>
+        :root {
+            --background-color: #ffffff;
+            --text-color: #333333;
+            --card-background: #f8f9fa;
+            --primary-color: #3b82f6;
+        }
+
+        .dark-mode {
+            --background-color: #1a1a1a;
+            --text-color: #f8f9fa;
+            --card-background: #2d2d2d;
+            --primary-color: #60a5fa;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar, .footer {
+            background-color: var(--card-background);
+        }
+
+        .portfolio-card, .analytics-card {
+            background-color: var(--card-background);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -78,7 +122,6 @@
                         <canvas id="portfolioChart"></canvas>
                     </div>
                 </div>
-
                 <!-- Asset Allocation -->
                 <div class="portfolio-card">
                     <div class="card-header">
@@ -126,7 +169,6 @@
                     </button>
                 </div>
             </div>
-
             <div class="holdings-table">
                 <div class="table-header">
                     <div class="table-cell">Asset</div>
@@ -250,5 +292,62 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/portfolio.js"></script>
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const icon = themeToggle.querySelector('i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+
+        // Portfolio Performance Chart
+        const portfolioCtx = document.getElementById('portfolioChart').getContext('2d');
+        const portfolioChart = new Chart(portfolioCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Portfolio Value',
+                    data: [200000, 210000, 220000, 215000, 230000, 245000],
+                    borderColor: 'var(--primary-color)',
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // Asset Allocation Chart
+        const allocationCtx = document.getElementById('allocationChart').getContext('2d');
+        const allocationChart = new Chart(allocationCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Stocks', 'Bonds', 'Cash'],
+                datasets: [{
+                    data: [65, 25, 10],
+                    backgroundColor: [
+                        '#3b82f6',
+                        '#10b981',
+                        '#f59e0b'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    </script>
 </body>
-</html> 
+</html>
